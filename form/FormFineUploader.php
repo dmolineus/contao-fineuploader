@@ -124,7 +124,7 @@ class FormFineUploader extends FineUploaderBase
                 'error'    => 0,
                 'size'     => $objFile->size,
                 'uploaded' => true,
-                'uuid'     => ($objModel !== null) ? \String::binToUuid($objFile->uuid) : ''
+                'uuid'     => ($objModel !== null && \Validator::isBinaryUuid($objModel->uuid)) ? \String::binToUuid($objModel->uuid) : ''
             );
         }
 
